@@ -1,0 +1,45 @@
+@model Formulario
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="estilof.css">
+    <title> CONSULTAS</title>
+</head>
+
+<body>
+    <form method="post">
+        <div class="text-center">
+            <div class="text-center">
+                <h1 class="display-4">AQUI REALIZE SUS CONSULTAS</h1>
+
+                <div class="form-group">
+                    <label asp-for="Nombre"></label>
+                    <input asp-for="Nombre" class="form-control">
+                </div>
+
+
+                <div class="form-group">
+                    <label asp-for="Celular"></label>
+                    <input asp-for="Celular" class="form-control">
+                </div>
+
+
+                <div class="form-group">
+                    <label asp-for="Comentario"></label>
+                    <input asp-for="Comentario" class="form-control">
+                </div>
+
+
+
+                <button type="button" class="btn btn-dark">enviar consulta</button>
+    </form>
+
+</body>
+
+</html>
