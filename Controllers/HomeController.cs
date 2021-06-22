@@ -6,16 +6,20 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using practica2.Models;
+using practica2_1.Data;
 
 namespace practica2.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly AplicationDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+
+        public HomeController(ILogger<HomeController> logger, AplicationDbContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
@@ -31,7 +35,30 @@ namespace practica2.Controllers
         public IActionResult Formulario()
         {
             return View();
+
+
         }
+
+        [HttpPost]
+        public IActionResult Formulario(Formulario f)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(f);
+                _context.SaveChanges();
+                return RedirectToAction("lista");
+            }
+
+            return View();
+        }
+
+        public IActionResult lista()
+        {
+            var formularios = _context.Formularios.ToList();
+            return View(formularios);
+        }
+
+
 
         public IActionResult Productos()
         {

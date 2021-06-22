@@ -1,0 +1,25 @@
+@model List<Formulario>
+
+
+
+<h1> contacto registrado correctamente</h1>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Nombre completo</th>
+        <th>Asunto</th>
+        <th>mensaje</th>
+    </tr>
+
+    @foreach (var f in Model)
+    {
+        <tr>
+
+            <td>@f.Id</td>
+            <td>@f.NombreCompleto</td>
+            <td>@f.Asunto</td>
+            <td>@f.Mensaje</td>
+        </tr>
+    }
+</table>

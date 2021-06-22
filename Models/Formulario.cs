@@ -5,14 +5,15 @@ namespace practica2.Models
     public class Formulario
     {
 
+        public int Id { get; set; }
         [Required]
-        public string Nombre{ get; set; }
+        public string NombreCompleto { get; set; }
 
- [Required]
-        public int Celular { get; set; }
+        [Required]
+        public string Asunto { get; set; }
 
- [Required]
-        public string Comentario { get; set; }
+        [Required]
+        public string Mensaje { get; set; }
 
     }
 
